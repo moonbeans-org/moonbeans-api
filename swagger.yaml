@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: moonbeans_api_gw_prod
+  title: Moonbeans Platform API
   version: 2023-02-09 02:31:16UTC
 servers:
   - url: https://api.moonbeans.io/{basePath}
@@ -16,7 +16,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /auth/{publicAddress}
+          description: Given a wallet address, return a message to be signed in order to authorize a POST to the profile / collections / storefront endpoints.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -34,7 +34,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /collection
+          description: Get all collections.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -45,7 +45,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /collection/ca/{contractAddress}
+          description: Get a collection by its unique contract address.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -63,7 +63,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /collection/featured
+          description: Get all featured collections.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -74,7 +74,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /collection/status/{status}
+          description: Get all collections that match a specific status field.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -92,7 +92,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /collection/{collectionId}
+          description: Get a collection by its unique collection ID / URL slug.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -102,7 +102,7 @@ paths:
     post:
       responses:
         default:
-          description: Default response for POST /collection/{collectionId}
+          description: Create or update a collection by its unique collection ID.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -120,7 +120,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /profile/{publicAddress}
+          description: Get an existing Moonbeans profile and associated data.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -130,7 +130,7 @@ paths:
     post:
       responses:
         default:
-          description: Default response for POST /profile/{publicAddress}
+          description: Create or update a profile by its public wallet address.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -148,7 +148,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /storefront
+          description: Get the list of all storefronts.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -159,7 +159,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /storefront/featured
+          description: Get the list of all featured storefronts.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -170,7 +170,7 @@ paths:
     get:
       responses:
         default:
-          description: Default response for GET /storefront/{storefrontId}
+          description: Get a storefront by its unique storefront ID.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
@@ -180,7 +180,7 @@ paths:
     post:
       responses:
         default:
-          description: Default response for POST /storefront/{storefrontId}
+          description: Create or update a storefront by its unique storefront ID.
       x-amazon-apigateway-integration:
         payloadFormatVersion: '1.0'
         type: aws_proxy
